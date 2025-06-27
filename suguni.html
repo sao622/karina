@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>すぐに帰りたい - ルート情報</title>
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@400;700&display=swap" rel="stylesheet">
+</head>
+<body>
+    <div class="container">
+        <header class="site-header">
+            <div class="status-bar">
+                </div>
+            <nav class="nav-bar">
+                <a href="home.html" class="nav-bar__back-button"></a>
+                <h1 class="nav-bar__title">ルート情報</h1>
+            </nav>
+        </header>
+
+        <main class="main-content">
+            <section class="card">
+                <h2 class="card__title-small">出口の混雑情報</h2>
+                <div class="card__body">
+                    <div class="congestion-map">
+                        <img src="images/deguchi.png" alt="出口の混雑状況マップ" class="card__image">
+                    </div>
+                    <p class="card__text-large">ノースエントランスが比較的空いてます</p>
+                </div>
+            </section>
+
+            <section class="card">
+                <h2 class="card__title-small">リアルタイムの混雑情報</h2>
+                 <div class="card__body">
+                    <iframe 
+                        class="google-map"
+                        src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3250.009139885888!2d139.6425943153406!3d35.45427198024765!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x60185c5d18585555%3A0x497e68474246146!2sK-Arena%20Yokohama!5e0!3m2!1sja!2sjp!4v1685079835841!5m2!1sja!2sjp" 
+                        allowfullscreen="" 
+                        loading="lazy" 
+                        referrerpolicy="no-referrer-when-downgrade">
+                    </iframe>
+                    
+                    <p class="card__text-medium">余韻スペース状況</p>
+                    <div class="status">
+                        <span class="status__indicator status__indicator--yellow"></span>
+                        <span class="status__text">やや混雑</span>
+                    </div>
+                    <a href="yoin.html" class="button-small button-secondary">余韻を楽しむ</a>
+                </div>
+            </section>
+
+            <section class="collapsible">
+                <button type="button" class="collapsible__trigger" id="route-trigger">
+                    <span>主要駅のおすすめルートを見る</span>
+                    <span class="collapsible__arrow"></span>
+                </button>
+                <div class="collapsible__content" id="route-content">
+                    <div class="card__body">
+                        <div class="tabs">
+                            <button type="button" class="tab-item is-active" data-tab="yokohama">横浜駅</button>
+                            <button type="button" class="tab-item" data-tab="shintakashima">新高島駅</button>
+                            <button type="button" class="tab-item" data-tab="minatomirai">みなとみらい駅</button>
+                        </div>
+                        <div class="tab-content">
+                            <div id="yokohama" class="tab-panel is-active">
+                                 <img src="images/yokohama.png" alt="横浜駅へのルート" class="route-map-image">
+                            </div>
+                             <div id="shintakashima" class="tab-panel">
+                                 <img src="images/shintakashima.png" alt="新高島駅へのルート" class="route-map-image">
+                            </div>
+                             <div id="minatomirai" class="tab-panel">
+                                 <img src="images/minatomirai.png" alt="みなとみらい駅へのルート" class="route-map-image">
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+        </main>
+    </div>
+    <script src="js/main.js"></script>
+</body>
+</html>
